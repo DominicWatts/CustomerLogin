@@ -23,6 +23,12 @@
         </span>
     </div>
     <!-- /ko -->
+    <!-- ko if: blockIsLoggedIn == '1'  -->
+    <span data-bind="text: new String('<?= $block->escapeHtml(__('According to the block logic you are currently logged In')) ?>')"></span>
+    <!-- /ko -->
+    <!-- ko ifnot: blockIsLoggedIn == '1'  -->
+    <span data-bind="text: new String('<?= $block->escapeHtml(__('as according to the block logic you are not currently logged in')) ?>')"></span>
+    <!-- /ko -->
 </div>
 <script type="text/x-magento-init">
 {
@@ -30,11 +36,22 @@
         "Magento_Ui/js/core/app": {
             "components": {
                 "customer": {
-                    "component": "Magento_Customer/js/view/customer"
+                    "component": "Magento_Customer/js/view/customer",
+                    "blockIsLoggedIn": "<?= $block->isCustomerLoggedIn(); ?>"
                 }
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 </script>
