@@ -1,0 +1,26 @@
+<div class="greet welcome" data-bind="scope: 'customer'">
+    <!-- ko if: customer().fullname  -->
+    <span class="logged-in"
+            data-bind="text: new String('<?= $block->escapeHtml(__('Welcome back %1', '%1')) ?>').replace('%1', customer().firstname)">
+    </span>
+    <!-- /ko -->
+    <!-- ko ifnot: customer().fullname  -->
+    <span class="not-logged-in"
+            data-bind='html:"<?= $block->escapeHtml(__("Please <a href='%1'>login</a>", $block->getUrl('customer/account/login'))) ?>"'>
+    </span>
+    <!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "customer": {
+                    "component": "Magento_Customer/js/view/customer"
+                }
+            }
+        }
+    }
+}
+
+</script>
