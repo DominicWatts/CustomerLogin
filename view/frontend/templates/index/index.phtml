@@ -1,13 +1,27 @@
 <div class="greet welcome" data-bind="scope: 'customer'">
-    <!-- ko if: customer().fullname  -->
+    <!-- ko if: customer().is_logged_in  -->
     <span class="logged-in"
             data-bind="text: new String('<?= $block->escapeHtml(__('Welcome back %1', '%1')) ?>').replace('%1', customer().firstname)">
     </span>
     <!-- /ko -->
-    <!-- ko ifnot: customer().fullname  -->
+    <!-- ko ifnot: customer().is_logged_in  -->
     <span class="not-logged-in"
             data-bind='html:"<?= $block->escapeHtml(__("Please <a href='%1'>login</a>", $block->getUrl('customer/account/login'))) ?>"'>
     </span>
+    <!-- /ko -->
+    <!-- ko if: customer().email  -->
+    <div>
+        <span class="logged-in"
+                data-bind="text: new String('<?= $block->escapeHtml(__('Email: %1', '%1')) ?>').replace('%1', customer().email)">
+        </span>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: customer().customer_group_id  -->
+    <div>
+        <span class="logged-in"
+                data-bind="text: new String('<?= $block->escapeHtml(__('Customer Group: %1', '%1')) ?>').replace('%1', customer().customer_group_name)">
+        </span>
+    </div>
     <!-- /ko -->
 </div>
 <script type="text/x-magento-init">
