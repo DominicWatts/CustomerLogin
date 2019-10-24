@@ -37,7 +37,7 @@
             "components": {
                 "customer": {
                     "component": "Magento_Customer/js/view/customer",
-                    "blockIsLoggedIn": "<?= $block->isCustomerLoggedIn(); ?>"
+                    "blockIsLoggedIn": "<?= $block->escapeJs($block->isCustomerLoggedIn()); ?>"
                 }
             }
         }

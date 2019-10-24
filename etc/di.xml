@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-	<type name="Magento\Customer\CustomerData\Customer">
-		<plugin disabled="false" name="Xigen_CustomerLogin_Plugin_Magento_Customer_CustomerData_Customer" sortOrder="10" type="Xigen\CustomerLogin\Plugin\Magento\Customer\CustomerData\Customer"/>
-	</type>
+    <type name="Magento\Customer\CustomerData\Customer">
+        <plugin disabled="false" name="Xigen_CustomerLogin_Plugin_Magento_Customer_CustomerData_Customer" sortOrder="10" type="Xigen\CustomerLogin\Plugin\Magento\Customer\CustomerData\Customer"/>
+    </type>
 </config>
