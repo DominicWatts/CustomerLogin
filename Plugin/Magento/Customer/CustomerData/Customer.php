@@ -23,6 +23,7 @@ class Customer
      * @param \Magento\Customer\Model\Session\Proxy $customerSession
      * @param \Magento\Customer\Api\GroupRepositoryInterface $groupRepository
      */
+    // phpcs:disable
     public function __construct(
         \Magento\Customer\Model\Session\Proxy $customerSession,
         \Magento\Customer\Api\GroupRepositoryInterface $groupRepository
@@ -30,6 +31,7 @@ class Customer
         $this->customerSession = $customerSession;
         $this->groupRepository = $groupRepository;
     }
+    // phpcs:enable
 
     /**
      * @param \Magento\Customer\CustomerData\Customer $subject
